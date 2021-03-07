@@ -73,15 +73,11 @@ export class Login extends React.Component{
     }
 
     handleLog() {
-        console.log(localStorage.getItem("mail"))
-        console.log(localStorage.getItem("pw"))
-        console.log(this.state.meail+ " maillllllllllll")
-        console.log(this.state.password+" passssword")
         if(localStorage.getItem("mail")!==this.state.meail || localStorage.getItem("pw")!==this.state.password ){
             alert("User or password incorrect")
             localStorage.setItem('isLoogedIn', false)
         }else{
-            
+            alert("Your logged, now you can go to your tasks")
             localStorage.setItem('isLoogedIn', true)
         }
         console.log(localStorage.getItem('isLoogedIn') + "  que cambio")
