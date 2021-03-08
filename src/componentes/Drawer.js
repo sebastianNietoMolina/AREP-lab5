@@ -38,6 +38,20 @@ export class DrawerLogin extends React.Component {
         this.handleState = this.handleState.bind(this)
         this.handleDueDate = this.handleDueDate.bind(this)
         this.handleSave = this.handleSave.bind(this)
+        this.handleOpenEdit = this.handleOpenEdit.bind(this)
+        this.handleCloseEdit = this.handleCloseEdit.bind(this)
+    }
+
+    handleCloseEdit() {
+        this.setState({
+            edit: false
+        })
+    }
+
+    handleOpenEdit() {
+        this.setState({
+            edit: true
+        })
     }
 
     handleSave() {
@@ -231,7 +245,7 @@ export class DrawerLogin extends React.Component {
                         timeout: 500,
                     }}
                 >
-                    <UserProfile />
+                    <UserProfile close={this.handleCloseEdit}/>
                 </Modal>
             </div>
         );

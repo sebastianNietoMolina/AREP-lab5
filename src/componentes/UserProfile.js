@@ -11,18 +11,10 @@ export class UserProfile extends React.Component {
         super(props)
         this.state = { edit: this.props.open, nameEdit: "", emailEdit: "", pwEdit: "", pw2Edit: "" }
         this.handleEdit = this.handleEdit.bind(this)
-        this.handleOpenEdit = this.handleOpenEdit.bind(this)
         this.handleNameEdit = this.handleNameEdit.bind(this)
         this.handleEmailEdit = this.handleEmailEdit.bind(this)
         this.handlePwEdit = this.handlePwEdit.bind(this)
         this.handlePw2Edit = this.handlePw2Edit.bind(this)
-        this.handleCloseEdit = this.handleCloseEdit.bind(this)
-    }
-
-    handleCloseEdit() {
-        this.setState({
-            edit: false
-        })
     }
 
     handleNameEdit(data) {
@@ -49,21 +41,15 @@ export class UserProfile extends React.Component {
         })
     }
 
-    handleOpenEdit() {
-        this.setState({
-            edit: true
-        })
-    }
-
     handleEdit() {
         if (this.state.pw2Edit === this.state.pwEdit) {
             localStorage.setItem('mail', this.state.emailEdit)
             localStorage.setItem('pw', this.state.pwEdit)
             localStorage.setItem('name', this.state.nameEdit)
+            this.props.close()
         } else {
             alert("Verify your password")
         }
-        this.handleCloseEdit()
     }
 
     render() {
