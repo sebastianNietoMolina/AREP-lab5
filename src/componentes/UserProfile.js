@@ -53,7 +53,6 @@ export class UserProfile extends React.Component {
     }
 
     render() {
-
         const setInformation = (
             <div>
                 <h2 id="simple-modal-title">New Taks</h2>
