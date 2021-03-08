@@ -80,7 +80,6 @@ export class Login extends React.Component{
             alert("Your logged, now you can go to your tasks")
             localStorage.setItem('isLoogedIn', true)
         }
-        console.log(localStorage.getItem('isLoogedIn') + "  que cambio")
         return localStorage.getItem("isLoogedIn")
     }
 

@@ -16,11 +16,11 @@ import { TaskFilter } from "./TaskFilter"
 import ControlPointIcon from '@material-ui/icons/ControlPoint';
 import CheckIcon from '@material-ui/icons/Check';
 import Modal from '@material-ui/core/Modal';
-import GridList from '@material-ui/core/GridList';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
+import { Cards } from './Cards';
 
 
 const ProfileView = () => (
@@ -30,7 +30,7 @@ const ProfileView = () => (
 export class DrawerLogin extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { left: false, open: false, description: '', responsable: '', state: '', dueDate: '', user: [] }
+        this.state = {left: false, open: false, description: '', responsable: '', state: '', dueDate: '', user: []}
         this.handleClose = this.handleClose.bind(this)
         this.handleOpen = this.handleOpen.bind(this)
         this.handleDescription = this.handleDescription.bind(this)
@@ -114,7 +114,6 @@ export class DrawerLogin extends React.Component {
         const list = (
             <div
                 role="presentation"
-                onClick={toggleDrawer(false)}
                 onKeyDown={toggleDrawer(false)}
                 style={{ position: 'relative', width: '50vh' }}
             >
@@ -128,13 +127,13 @@ export class DrawerLogin extends React.Component {
                             <ListItemText primary={localStorage.getItem("mail")} />
                         </div><br />
                     </ListItem>
-                    <ListItem button>
-                        <div style={{ marginLeft: '40vh' }}>
+                    <div style={{ marginLeft: '40vh' }}>
+                        <Button onClick={this.handleOpenEdit}>
                             <Avatar>
                                 <EditIcon />
                             </Avatar>
-                        </div>
-                    </ListItem>
+                        </Button>
+                    </div>
                 </List>
                 <Divider />
                 <div style={{ position: 'absolute', top: '85vh', marginLeft: '10vh' }}>
@@ -161,7 +160,7 @@ export class DrawerLogin extends React.Component {
                     <InputLabel htmlFor="responsable">Responsable</InputLabel>
                     <Input id="responsable" name="responsable" type="text" />
                 </FormControl>
-                <FormControl margin="normal" required fullWidth onChange={this.handleState}>
+                <FormControl margin="normal" required fullWidth>
                     <InputLabel htmlFor="state">State</InputLabel>
                     <Select onChange={this.handleState}>
                         <option value="Ready">Ready</option>
@@ -189,6 +188,13 @@ export class DrawerLogin extends React.Component {
                     </Toolbar>
                 </React.Fragment>
                 <TaskFilter />
+                {
+                    this.state.user.map((task, i) => {
+                        return (
+                            <Cards action={task} color="blue" />
+                        )
+                    })
+                }
                 <Modal
                     open={this.state.open}
                     onClose={this.handleClose}
@@ -200,9 +206,9 @@ export class DrawerLogin extends React.Component {
                         timeout: 500,
                     }}
                 >
-                    <div style={{ backgroundColor: 'white', border: '2px solid #000', textAlign: 'center' }}>
+                    <div style={{ backgroundColor: 'white', border: '2px solid #000', textAlign: 'center', width: 450 }}>
                         {addInformation}
-                        <Button style={{ marginLeft: '190vh' }} onClick={this.handleSave}>
+                        <Button style={{ marginLeft: '55vh' }} onClick={this.handleSave}>
                             <Avatar>
                                 <CheckIcon style={{ color: "blue" }} />
                             </Avatar>
@@ -214,6 +220,19 @@ export class DrawerLogin extends React.Component {
                         <ControlPointIcon style={{ color: "blue" }} />
                     </Avatar>
                 </Button>
+                <Modal
+                    open={this.state.edit}
+                    onClose={this.handleCloseEdit}
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    closeAfterTransition
+                    BackdropProps={{
+                        timeout: 500,
+                    }}
+                >
+                    <UserProfile />
+                </Modal>
             </div>
         );
     }
