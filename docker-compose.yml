@@ -1,14 +1,22 @@
 version: '2'
 
-
 services:
-  web:
+
+  balancer:
     build:
-      context: .
+      context: ./RoundRobin
       dockerfile: Dockerfile
-    container_name: web
+    container_name: balancer
     ports:
-      - "8087:6000"
+      - "35000:6000"
+
+  log1:
+    build:
+      context: ./LogService
+      dockerfile: Dockerfile
+    ports:
+      - "35001:6000"
+
   db:
     image: mongo:3.6.1
     container_name: db

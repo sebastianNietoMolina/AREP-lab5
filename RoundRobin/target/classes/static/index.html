@@ -3,9 +3,27 @@
     <head>
         <title>Modularizacion</title>
         <meta charset="UTF-8">
+
         <script src="js/app.js"></script>
         <script src="js/appClient.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            table, th, td, tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            }
+
+            .grid {
+            display: grid;
+            grid-column-gap: 30px;
+            grid-template-columns: auto auto;
+            text-indent: 10px;
+            }
+        </style>
     </head>
 
     <body>
@@ -14,6 +32,22 @@
             <label>Note: </label>
             <input type="text" id="note"  value="text" />
             <button type="button" onclick="app.postMessage()" >Save Message</button>
+        </div></br></br>
+
+        <div id="tables">
+
+            <table id="table1">
+                <thead id="thea1">
+                <tr>
+                    <th>Notes</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody id="tbody1">
+                <tr>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
