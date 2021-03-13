@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="93087eeb-5b5e-45f0-b412-100466b8d236" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogService/src/main/java/app/persistence/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/LogService/src/main/java/app/persistence/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoundRobin/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobin/src/main/java/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoundRobin/src/main/java/app/HttpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobin/src/main/java/app/HttpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundRobin/RoundRobin.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RoundRobin/target/RoundRobin-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobin/target/RoundRobin-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoundRobin/target/classes/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobin/target/classes/app/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoundRobin/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobin/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoundRobin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoundRobin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundRobin/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

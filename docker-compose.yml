@@ -3,9 +3,7 @@ version: '2'
 services:
 
   balancer:
-    build:
-      context: ./RoundRobin
-      dockerfile: Dockerfile
+    image: balancer
     container_name: balancer
     networks:
       arep-lab5_default:
@@ -14,25 +12,19 @@ services:
       - "35000:6000"
 
   log1:
-    build:
-      context: ./LogService
-      dockerfile: Dockerfile
+    image: logservice
     networks:
       arep-lab5_default:
         ipv4_address: 172.24.0.3
 
   log2:
-    build:
-      context: ./LogService
-      dockerfile: Dockerfile
+    image: logservice
     networks:
       arep-lab5_default:
         ipv4_address: 172.24.0.4
 
   log3:
-    build:
-      context: ./LogService
-      dockerfile: Dockerfile
+    image: logservice
     networks:
       arep-lab5_default:
         ipv4_address: 172.24.0.5
