@@ -12,7 +12,7 @@ public class MongoDB {
     public MongoCollection<Document> collection;
 
     public MongoDB() {
-        client = new MongoClient( "localhost" , 27017 );
+        client = new MongoClient( "172.24.0.6" , 27017 );
     }
 
     public ArrayList<String> dataView(String data){

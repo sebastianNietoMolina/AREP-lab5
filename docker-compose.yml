@@ -7,6 +7,9 @@ services:
       context: ./RoundRobin
       dockerfile: Dockerfile
     container_name: balancer
+    networks:
+      arep-lab5_default:
+        ipv4_address: 172.24.0.2
     ports:
       - "35000:6000"
 
@@ -14,8 +17,25 @@ services:
     build:
       context: ./LogService
       dockerfile: Dockerfile
-    ports:
-      - "35001:6000"
+    networks:
+      arep-lab5_default:
+        ipv4_address: 172.24.0.3
+
+  log2:
+    build:
+      context: ./LogService
+      dockerfile: Dockerfile
+    networks:
+      arep-lab5_default:
+        ipv4_address: 172.24.0.4
+
+  log3:
+    build:
+      context: ./LogService
+      dockerfile: Dockerfile
+    networks:
+      arep-lab5_default:
+        ipv4_address: 172.24.0.5
 
   db:
     image: mongo:3.6.1
@@ -23,9 +43,19 @@ services:
     volumes:
       - mongodb:/data/db
       - mongodb_config:/data/configdb
+    networks:
+      arep-lab5_default:
+        ipv4_address: 172.24.0.6
     ports:
       - 27017:27017
     command: mongod
+
+networks:
+  arep-lab5_default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.24.0.0/16
 
 volumes:
   mongodb:

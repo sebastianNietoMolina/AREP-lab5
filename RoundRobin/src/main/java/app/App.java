@@ -11,7 +11,7 @@ import static spark.Spark.staticFileLocation;
 public class App {
 
     public static int position = 0;
-    public static final String[] ports = {"35001","35002","35003"};
+    public static final String[] ports = {"172.24.0.3","172.24.0.4","172.24.0.5"};
 
     public static void main(String... args){
         port(getPort());

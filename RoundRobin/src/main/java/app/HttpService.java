@@ -15,10 +15,12 @@ public class HttpService {
 
     public String doPost(String note, String port) throws IOException {
         RequestBody body = RequestBody.create(note,JSON);
+        String url = "http://"+port+":6000/save";
         Request request = new Request.Builder()
-                .url("http://localhost:4568/save")
+                .url(url)
                 .post(body)
                 .build();
+        System.out.println(port+"/save");
         Response response = httpClient.newCall(request).execute();
         return response.body().string();
     }
