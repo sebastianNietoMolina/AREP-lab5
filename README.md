@@ -13,7 +13,7 @@
 
 ## Introducción
 
-Este laboratorio esta hecho usando el micro-framenwork Spark un cliente web y un par de servicios REST, la idea es aprender a usar los contenedores de Docker para consumir recursos como una bases de datos, en este caso MongoDB, debemos crear un balanceador de carga que consumirá la imagen de nuestro proyecto para poder desplegar 3 nodos diferentes que consuman los datos enviamos desde la pagina web y la guarden en la base de datos, luego nos enviara el resultado de la tabla actualizada donde se mostraran las notas tomadas las fecha en que se hicieron.
+Este laboratorio esta hecho usando el micro-framenwork Spark un cliente web y un par de servicios REST, la idea es aprender a usar los contenedores de Docker para consumir recursos como una bases de datos, en este caso MongoDB, debemos crear un balanceador de carga que consumirá la imagen de nuestro proyecto para poder desplegar 3 nodos diferentes que consuman los datos enviamos desde la pagina web y la guarden en la base de datos, luego nos enviara el resultado de la tabla actualizada donde se mostraran las notas tomadas las fecha en que se hicieron, para información más detallata de la aquitectura puede ver la [documentación](design.pdf).
 
 ## Arquitectura
 
