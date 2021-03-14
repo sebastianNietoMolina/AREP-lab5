@@ -134,7 +134,15 @@ Guarde ese archivo y ejecute el siguiente comando para usarlo docker-compose up 
 ![](fotos/pruebaAWS.PNG)
 
 
+## Autores ✒️
 
+_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+
+* **Sebastian Nieto** - [sebastianNieto](https://github.com/sebastianNietoMolina)
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
 
 
